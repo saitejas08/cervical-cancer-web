@@ -1,0 +1,351 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.medical-icon {
+    font-size: 2.5rem;
+}
+
+.header-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+.upload-section {
+    margin-bottom: 3rem;
+}
+
+.upload-card,
+.results-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.upload-card h2,
+.results-card h2 {
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.upload-description {
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* File input styles */
+.file-input-wrapper {
+    margin-bottom: 2rem;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    color: #475569;
+    min-width: 200px;
+}
+
+.file-input-label:hover {
+    background: #e2e8f0;
+    border-color: #94a3b8;
+}
+
+.file-input-label.active {
+    background: #dbeafe;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.file-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Image preview */
+.image-preview {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.file-name {
+    margin-top: 1rem;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Button styles */
+.submit-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+    position: relative;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.secondary-btn {
+    background: #f8fafc;
+    color: #475569;
+    border: 2px solid #e2e8f0;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.secondary-btn:hover {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+}
+
+/* Loading state */
+.btn-loader {
+    display: inline-block;
+}
+
+.btn-text.hidden,
+.btn-loader.hidden {
+    display: none;
+}
+
+/* Error message */
+.error-message {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #fecaca;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+/* Results section */
+.results-section {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.result-content {
+    margin: 2rem 0;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+.result-item label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.result-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.result-value.positive {
+    color: #dc2626;
+}
+
+.result-value.negative {
+    color: #059669;
+}
+
+/* Confidence bar */
+.confidence-bar {
+    width: 100%;
+    height: 20px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.confidence-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+    transition: width 0.8s ease;
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+    background: #1e293b;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.disclaimer {
+    background: #334155;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-info {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Utility classes */
+.hidden {
+    display: none !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .header-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .upload-card,
+    .results-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .result-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1.5rem 0;
+    }
+
+    .header-title {
+        font-size: 1.8rem;
+    }
+
+    .upload-card,
+    .results-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .main {
+        padding: 2rem 0;
+    }
+}
